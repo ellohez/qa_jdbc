@@ -8,6 +8,9 @@ public class Runner {
 		try {
 			PetDAO petDB = new PetDAO("jdbc:mysql://localhost:3306/pet", "root", "pass");
 			petDB.read();
+			petDB.create("Gusty", 6, "Grey", "Heinz-57");
+			petDB.read();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

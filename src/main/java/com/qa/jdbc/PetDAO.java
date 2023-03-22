@@ -31,12 +31,12 @@ public class PetDAO {
 
 	public int create(String name, int age, String colour, String breed) {
 		try (PreparedStatement stmt = this.conn
-				.prepareStatement("INSERT INTO pets VALUES (name, age, colour, breed) VALUES (? ? ? ?);")) {
+				.prepareStatement("INSERT INTO pets (name, age, colour, breed) VALUES (?, ?, ?, ?)");) {
 
 			stmt.setString(1, name);
 			stmt.setInt(2, age);
 			stmt.setString(3, colour);
-			stmt.setString(3, breed);
+			stmt.setString(4, breed);
 
 			return stmt.executeUpdate();
 
